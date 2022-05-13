@@ -15,14 +15,16 @@ class Semaforo {
     print("$this->color\n");
   }
 
+  /* pasoDelTiempo: recibe una cantidad de segundos y maneja el
+  apagado y encendido de las luces del semaforo */
   public function pasoDelTiempo($segundos) {
     $this->contadorTiempo += $segundos;
 
-    $duracionColor; // La duracion en segundos del color actual
-    $proximoColor; // El color que sigue ,al actual, en la secuencia
+    $duracionColor; // La duración en segundos del color actual
+    $proximoColor; // El color que sigue, al actual, en la secuencia
 
-    /* El semaforo esta en modo intermitente, se ejecuta
-    este codigo y se sale de la funcion al terminarse el tiempo dado */
+    /* Si el semaforo está en modo intermitente, se ejecuta este
+    código y se sale de la funcion al terminarse el tiempo dado */
     if ($this->estaIntermitente) {
       while ($this->contadorTiempo) {
         switch($this->color) {
