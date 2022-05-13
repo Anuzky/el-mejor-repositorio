@@ -5,12 +5,15 @@ class Cronometro {
   private $minutos = 0;
   private $horas = 0;
 
+  // reiniciar: setea el cronometro a 0
   public function reiniciar() {
     $this->segundos = 0;
     $this->minutos = 0;
     $this->horas = 0;
   }
 
+  /* incrementarTiempo: aumenta el tiempo del cronometro de a
+  un segundo, ajustando los minutos y horas cuando corresponde. */
   public function incrementarTiempo() {
       $this->segundos++;
     if ($this->segundos == 60) {
@@ -23,6 +26,7 @@ class Cronometro {
     }
   }
 
+  // mostrarTiempo: muestra el tiempo pasado en un formato legible.
   public function mostrarTiempo() {
     if ($this->horas > 0) {
       if ($this->horas == 1)
